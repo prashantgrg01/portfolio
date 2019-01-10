@@ -1,17 +1,10 @@
 body {
   font-family: 'Exo 2', sans-serif;
+  background-color: #FFF9C4;
 }
 header {
   margin-top: 1.25rem;
   text-align: center;
-}
-@media (min-width: 576px) { 
-  .profile-info {
-    text-align: right;
-    padding-right: 1rem;
-    padding-bottom: 0.1rem;
-    border-right: 4px solid #28a745;
-  }
 } 
 .profile-img {
   display: inline-block;
@@ -20,28 +13,89 @@ header {
   width: 12rem;
   height: 12rem;
   border-radius: 50%;
+  border: 2px solid #777;
+  opacity: 1;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+.greeting {
+  position: absolute;
+  top: 35%;
+  left: 38.5%;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+.profile-img-parent:hover > .profile-img, .profile-img-parent:hover > .greeting {
+  -webkit-transform: rotateZ(360deg);
+  -moz-transform: rotateZ(360deg);
+  -ms-transform: rotateZ(360deg);
+  -o-transform: rotateZ(360deg);
+  transform: rotateZ(360deg);
+} 
+.profile-img-parent:hover > .profile-img {
+  opacity: 0;
+}
+.profile-img-parent:hover > .greeting {
+  opacity: 1;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .greeting {
+    left: 43%;
+  }
+}
+@media (min-width: 992px) { 
+  .profile-info {
+    text-align: right;
+    padding-right: 1rem;
+    padding-bottom: 0.1rem;
+    border-right: 4px solid #28a745;
+  }
+  .greeting {
+    left: 32%;
+  }
 }
 hr {
-  border-top: 1px dashed rgba(0,0,0,.2);
+  border-top: 1px dashed #777;
 }
 .portfolio {
   margin: 1rem 0;
 }
 .portfolio-item {
-  border: 1px solid rgba(0,0,0,.3);
+  border: 1px solid #777;
   margin: 1rem;
   text-align: center;
   padding-bottom: 1rem;
+  overflow: hidden;
 }
 .portfolio-item > img {
   width: 100%;
   height: 15rem;
   padding: 1rem;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+.portfolio-item:hover > img {
+  -webkit-transform: scale3d(0.95, 0.95, 0.95) rotateZ(-5deg);
+  -moz-transform: scale3d(0.95, 0.95, 0.95) rotateZ(-5deg);
+  -ms-transform: scale3d(0.95, 0.95, 0.95) rotateZ(-5deg);
+  -o-transform: scale3d(0.95, 0.95, 0.95) rotateZ(-5deg);
+  transform: scale3d(0.95, 0.95, 0.95) rotateZ(-5deg);
 }
 .footer {
   padding: 1rem 0.5rem;
   margin: 0;
-  background-color: #666;
+  background-color: #555;
   color: #e3e3e3;
 }
 .menu-list {
